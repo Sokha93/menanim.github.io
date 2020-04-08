@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    transition-delay: all ease 1s;
+}
+
+.c-hamburger{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    border-radius: 30px;
+
+}
+
+.c-hamburger:focus{
+    outline: none;
+}
+
+.c-hamburger span{
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    right: 10px;
+    height: 5px;
+    background: #fff;
+}
+
+.c-hamburger span::before, .c-hamburger span::after{
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    content: '';
+
+}
+
+.c-hamburger span::before{
+    top: -10px;
+
+}
+
+.c-hamburger span::after{
+    bottom: -10px;
+}
+
+.c-hamburger-line{
+    background: green;
+}
+
+.c-hamburger-line span{
+    transition: background 0.2s 0.2s;
+}
+
+.c-hamburger-line span::before, .c-hamburger-line span::after{
+    transition-duration: 0.2s 0.2s;
+    transition-delay: 0,2s 0.2;
+}
+
+.c-hamburger-line span::before{
+    transition-property: top, transform;
+
+}
+
+.c-hamburger-line span::after{
+    transition-property: bottom, transform;
+    
+}
+
+.c-hamburger-line.is-active{
+    background: #cb0032;
+}
+
+.c-hamburger-line.is-active span{
+    background: none;
+}
+
+.c-hamburger-line.is-active span::before{
+    top: 0;
+    transform: rotate(-45deg);
+}
+.c-hamburger-line.is-active span::after{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+.c-hamburger-line.is-active span::before, .c-hamburger-line.is-active span::after{
+    transition-delay: 0s, 0.2s;
+} 
+
+#menu{
+    width: 255px;
+    margin-left: -204px;
+    background: #fbf0ff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition-delay: all ease 1s;
+    z-index: 9999;
+}
+
+.container{
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.body-active{
+    margin-left: 300px;
+}
+
+#menu.nav-active{
+    margin-left: 0;
+}
